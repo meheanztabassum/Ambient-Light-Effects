@@ -1,0 +1,75 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:#222;
+}
+.box{
+  position: relative;
+  height: 300px;
+  width: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate{
+  0%{transform: rotateX(-30deg) rotateY(0deg);}
+  100%{transform: rotateX(-30deg) rotateY(360deg);}
+}
+
+.box div{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  top: 0;
+  transform-style: preserve-3d;
+}
+
+.box div span{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  top: 0;
+  background: linear-gradient(#222, rgb(214, 115, 131));
+  opacity: 0.8;
+  transform: rotateY(calc(90deg * var(--n))) translateZ(150px);
+  border: 5px solid pink;
+}
+
+.top{
+  position: absolute;
+  top: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #333;
+  box-shadow: 0 0 10px 5px rgb(248, 109, 132), 
+  0 0 200px 7px rgb(248, 122, 143),
+  0 0 200px 20px rgb(248, 122, 143),
+  0 0 30px 25px rgb(248, 122, 143);
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.top::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  top: 0;
+  box-shadow: 0 0 120px rgb(248, 109, 132), 
+  0 0 200px rgb(248, 122, 143),
+  0 0 200px rgb(248, 122, 143),
+  0 0 200px rgb(248, 122, 143);
+  filter: blur(20px);
+  transform: translateZ(-350px);
+}
